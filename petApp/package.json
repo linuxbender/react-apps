@@ -1,0 +1,57 @@
+{
+	"name": "petapp",
+	"version": "0.0.1",
+	"private": true,
+	"scripts": {
+		"start": "node node_modules/react-native/local-cli/cli.js start",
+		"prestart:ios": "rimraf lib && tsc",
+		"start:ios": "react-native run-ios",
+		"prestart:android": "rimraf lib && tsc",
+		"start:android": "react-native run-android",
+		"pretest": "tsc",
+		"test": "jest"
+	},
+	"dependencies": {
+		"@types/react-redux": "^4.4.40",
+		"react": "16.0.0-alpha.6",
+		"react-native": "0.44.2",
+		"react-redux": "^5.0.5",
+		"redux": "^3.6.0"
+	},
+	"devDependencies": {
+		"@types/enzyme": "2.8.0",
+		"@types/jest": "19.2.3",
+		"@types/react": "15.0.25",
+		"@types/react-native": "0.44.7",
+		"@types/react-test-renderer": "15.5.0",
+		"concurrently": "3.4.0",
+		"enzyme": "2.8.2",
+		"jest": "20.0.4",
+		"react-addons-test-utils": "15.5.1",
+		"react-dom": "15.5.4",
+		"react-test-renderer": "16.0.0-alpha.6",
+		"rimraf": "2.6.1",
+		"ts-jest": "20.0.5",
+		"tslint": "5.4.2",
+		"typescript": "2.3.4"
+	},
+	"jest": {
+		"preset": "react-native",
+		"moduleFileExtensions": [
+			"ts",
+			"tsx",
+			"js"
+		],
+		"transform": {
+			"^.+\\.(js)$": "<rootDir>/node_modules/babel-jest",
+			"\\.(ts|tsx)$": "<rootDir>/node_modules/ts-jest/preprocessor.js"
+		},
+		"testRegex": "(/__tests__/.*|\\.(test|spec))\\.(ts|tsx|js)$",
+		"testPathIgnorePatterns": [
+			"\\.snap$",
+			"<rootDir>/node_modules/",
+			"<rootDir>/lib/"
+		],
+		"cacheDirectory": ".jest/cache"
+	}
+}
